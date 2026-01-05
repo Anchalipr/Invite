@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anchali & Amith - Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Italiana&family=Cinzel:wght@400;600;700&family=Tangerine:wght@400;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark-gold: #B8941E;
+            --maroon: #800020;
+            --dark-maroon: #5C0016;
+            --white: #FFFFFF;
+            --off-white: #FFF9F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background: var(--white);
+            color: #333;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Hindu-Inspired Background Pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Paisley Decorative Corners */
+        .paisley-corner {
+            position: fixed;
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: 1;
+            color: var(--gold);
+        }
+
+        .paisley-top-left {
+            top: 20px;
+            left: 20px;
+            width: 120px;
+            height: 120px;
+        }
+
+        .paisley-top-right {
+            top: 20px;
+            right: 20px;
+            width: 120px;
+            height: 120px;
+            transform: scaleX(-1);
+        }
+
+        .paisley-bottom-left {
+            bottom: 20px;
+            left: 20px;
+            width: 120px;
+            height: 120px;
+            transform: scaleY(-1);
+        }
+
+        .paisley-bottom-right {
+            bottom: 20px;
+            right: 20px;
+            width: 120px;
+            height: 120px;
+            transform: scale(-1);
+        }
+
+        /* Section Separators */
+        .section {
+            padding: 100px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-divider {
+            width: 120px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-divider::before,
+        .section-divider::after {
+            content: '❖';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold);
+            font-size: 12px;
+        }
+
+        .section-divider::before {
+            left: -20px;
+        }
+
+        .section-divider::after {
+            right: -20px;
+        }
+
+        /* Alternate Section Backgrounds */
+        .section:nth-child(even) {
+            background: var(--off-white);
+        }
+
+        .section:nth-child(odd) {
+            background: var(--white);
+        }
+
+        /* Lotus Flower Decoration */
+        .lotus-decoration {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 30px;
+            opacity: 0.6;
+            color: var(--gold);
+        }
+
+        /* Om Symbol */
+        .om-symbol {
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            opacity: 0.4;
+            margin: 20px 0;
+        }
+
+        /* Music Control Button */
+        .music-control {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            border: 3px solid var(--maroon);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .music-control:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+            background: var(--dark-gold);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 80px 20px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .ganesh-icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 40px;
+            color: var(--gold);
+            filter: drop-shadow(0 3px 10px rgba(212, 175, 55, 0.4));
+            animation: fadeIn 1.5s ease-out 0.3s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hosts-info {
+            font-size: 1.05rem;
+            color: var(--maroon);
+            margin-bottom: 40px;
+            line-height: 1.9;
+            animation: fadeIn 1.5s ease-out 0.5s both;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .invitation-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #444;
+            margin: 40px auto;
+            max-width: 800px;
+            line-height: 1.9;
+            animation: fadeIn 1.5s ease-out 0.7s both;
+            font-family: 'Lora', serif;
+        }
+
+        /* Names Section */
+        .names-section {
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            animation: fadeIn 1.8s ease-out 1s both;
+        }
+
+        .bride-groom-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 60px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .name-card {
+            background: var(--white);
+            border: 3px solid var(--gold);
+            border-radius: 0;
+            padding: 60px 40px;
+            flex: 1;
+            min-width: 320px;
+            max-width: 450px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+        }
+
+        .name-card::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--maroon), transparent);
+        }
+
+        .name-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .wedding-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            margin-bottom: 40px;
+            border: 3px solid var(--gold);
+        }
+
+        .name {
+            font-family: 'Tangerine', cursive;
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin: 30px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            line-height: 1;
+        }
+
+        .parents-info {
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 2;
+            margin-top: 30px;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .parents-label {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+        }
+
+        .divider {
+            font-family: 'Tangerine', cursive;
+            font-size: 6rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-align: center;
+            margin: 0 20px;
+            align-self: center;
+        }
+
+        /* Event Details */
+        .event-details {
+            text-align: center;
+            padding: 100px 20px;
+            animation: fadeIn 2s ease-out 1.5s both;
+        }
+
+        .event-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            font-weight: 600;
+        }
+
+        .event-info {
+            font-size: 1.35rem;
+            line-height: 2.2;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: 'Lora', serif;
+        }
+
+        .date-time {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--maroon);
+            margin: 40px 0;
+            font-family: 'Italiana', serif;
+        }
+
+        .venue {
+            font-size: 1.25rem;
+            color: #555;
+            margin: 30px 0;
+            line-height: 2.2;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .map-button {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 20px 55px;
+            background: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 0;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 3px solid var(--gold);
+            font-family: 'Cinzel', serif;
+            letter-spacing: 3px;
+        }
+
+        .map-button:hover {
+            background: var(--white);
+            color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Countdown Timer */
+        .countdown-section {
+            text-align: center;
+            padding: 100px 20px;
+            animation: fadeIn 2s ease-out 1.8s both;
+        }
+
+        .countdown-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.4rem;
+            color: var(--gold);
+            margin-bottom: 60px;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .time-unit {
+            background: var(--white);
+            border: 3px solid var(--gold);
+            border-radius: 0;
+            padding: 40px 30px;
+            min-width: 140px;
+            position: relative;
+        }
+
+        .time-unit::after {
+            content: '✦';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold);
+            font-size: 16px;
+            background: var(--white);
+            padding: 0 10px;
+        }
+
+        .time-value {
+            font-size: 3.8rem;
+            font-weight: 700;
+            color: var(--maroon);
+            display: block;
+            font-family: 'Italiana', serif;
+        }
+
+        .time-label {
+            font-size: 1.05rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 15px;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        /* RSVP Section */
+        .rsvp-section {
+            padding: 100px 20px;
+            animation: fadeIn 2s ease-out 2s both;
+        }
+
+        .rsvp-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 70px;
+            letter-spacing: 8px;
+            font-weight: 600;
+        }
+
+        .rsvp-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            border: 3px solid var(--gold);
+            border-radius: 0;
+            padding: 70px 60px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .rsvp-form::before {
+            content: '❋';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold);
+            font-size: 24px;
+            background: var(--white);
+            padding: 0 15px;
+        }
+
+        .form-group {
+            margin-bottom: 35px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--maroon);
+            margin-bottom: 12px;
+            font-weight: 600;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 16px;
+            background: var(--off-white);
+            border: 2px solid #ddd;
+            border-radius: 0;
+            color: #333;
+            font-family: 'Lora', serif;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: var(--white);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 40px;
+            margin-top: 15px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            width: auto;
+            cursor: pointer;
+            accent-color: var(--gold);
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 22px;
+            background: var(--gold);
+            color: var(--white);
+            border: 3px solid var(--gold);
+            border-radius: 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 4px;
+            margin-top: 20px;
+        }
+
+        .submit-button:hover {
+            background: var(--white);
+            color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 100px 20px;
+            border-top: 3px solid var(--gold);
+            position: relative;
+        }
+
+        .footer::before {
+            content: '❖';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold);
+            font-size: 18px;
+            background: var(--white);
+            padding: 0 15px;
+        }
+
+        .footer-text {
+            font-size: 1.35rem;
+            color: #555;
+            font-style: italic;
+            line-height: 2;
+            font-family: 'Lora', serif;
+        }
+
+        .blessing {
+            font-family: 'Tangerine', cursive;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-top: 40px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 15px;
+            }
+
+            .paisley-corner {
+                width: 80px;
+                height: 80px;
+            }
+
+            .event-title, .rsvp-title {
+                font-size: 2.2rem;
+                letter-spacing: 4px;
+            }
+
+            .countdown-title {
+                font-size: 1.8rem;
+                letter-spacing: 2px;
+            }
+
+            .name {
+                font-size: 3.5rem;
+            }
+
+            .name-card {
+                min-width: 100%;
+                padding: 40px 25px;
+            }
+
+            .bride-groom-container {
+                gap: 30px;
+            }
+
+            .divider {
+                font-size: 4.5rem;
+                margin: 20px 0;
+            }
+
+            .countdown-timer {
+                gap: 20px;
+            }
+
+            .time-unit {
+                min-width: 100px;
+                padding: 25px 20px;
+            }
+
+            .time-value {
+                font-size: 2.8rem;
+            }
+
+            .rsvp-form {
+                padding: 40px 25px;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .wedding-image {
+                height: 200px;
+            }
+        }
+
+        /* Success Message */
+        .success-message {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+            border: 3px solid var(--gold);
+            border-radius: 0;
+            padding: 35px;
+            text-align: center;
+            color: var(--maroon);
+            font-size: 1.2rem;
+            margin-top: 30px;
+            animation: slideInUp 0.5s ease-out;
+            line-height: 1.9;
+            font-family: 'Lora', serif;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Paisley Decorative Corners -->
+    <svg class="paisley-corner paisley-top-left" viewBox="0 0 100 100" fill="currentColor">
+        <path d="M50,10 Q70,20 70,40 Q70,60 50,70 Q30,60 30,40 Q30,20 50,10 Z M50,30 Q60,35 60,45 Q60,55 50,60 Q40,55 40,45 Q40,35 50,30 Z"/>
+        <circle cx="50" cy="45" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+
+    <svg class="paisley-corner paisley-top-right" viewBox="0 0 100 100" fill="currentColor">
+        <path d="M50,10 Q70,20 70,40 Q70,60 50,70 Q30,60 30,40 Q30,20 50,10 Z M50,30 Q60,35 60,45 Q60,55 50,60 Q40,55 40,45 Q40,35 50,30 Z"/>
+        <circle cx="50" cy="45" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+
+    <svg class="paisley-corner paisley-bottom-left" viewBox="0 0 100 100" fill="currentColor">
+        <path d="M50,10 Q70,20 70,40 Q70,60 50,70 Q30,60 30,40 Q30,20 50,10 Z M50,30 Q60,35 60,45 Q60,55 50,60 Q40,55 40,45 Q40,35 50,30 Z"/>
+        <circle cx="50" cy="45" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+
+    <svg class="paisley-corner paisley-bottom-right" viewBox="0 0 100 100" fill="currentColor">
+        <path d="M50,10 Q70,20 70,40 Q70,60 50,70 Q30,60 30,40 Q30,20 50,10 Z M50,30 Q60,35 60,45 Q60,55 50,60 Q40,55 40,45 Q40,35 50,30 Z"/>
+        <circle cx="50" cy="45" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+    <!-- Music Control -->
+    <div class="music-control" onclick="toggleMusic()" id="musicControl">
+        🎵
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://cs1.mp3.pm/download/235465697/aTNGOUg3RDhSZXNqY2xXVmF3M0NpdGM4ZTF2RnRrSWN5V3NwM3V3akhZSElUdnJ5QUFjWnZKUVR0SDlTalNCd1FGeVhBRnh3b2xxbHhaUDBwWkdVZHhOVlNUWEtDQ09kNDNJV0FWNFJqM2pPamNlV2kxZG1GSkVMd1lrenVaRGM/Pritam_Sachet_Tandon_Amitabh_Bhattacharya_-_Kudmayi_From_Rocky_Aur_Rani_Kii_Prem_Kahaani_(mp3.pm).mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header section">
+            <svg class="ganesh-icon" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M50,10 Q30,20 30,35 Q30,45 40,50 Q35,55 35,65 Q35,75 45,80 L45,90 L55,90 L55,80 Q65,75 65,65 Q65,55 60,50 Q70,45 70,35 Q70,20 50,10 Z M40,30 Q40,25 45,25 Q50,25 50,30 Q50,35 45,35 Q40,35 40,30 Z M55,25 Q60,25 60,30 Q60,35 55,35 Q50,35 50,30 Q50,25 55,25 Z"/>
+            </svg>
+            
+            <div class="om-symbol">ॐ</div>
+            
+            <div class="hosts-info">
+                <strong>Pradeep Kumar M. C. & Sajeena Pradeep</strong><br>
+                'Piyusham', Near Rashtra Deepika Press, Pallikunnu, Kannur<br>
+                Ph: 8589970949
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <p class="invitation-text">
+                Cordially invite your esteemed presence and blessings with family<br>
+                on the occasion of our daughter's wedding
+            </p>
+            
+            <!-- Lotus Decoration -->
+            <svg class="lotus-decoration" viewBox="0 0 100 100" fill="currentColor">
+                <ellipse cx="50" cy="70" rx="8" ry="15" transform="rotate(-30 50 70)"/>
+                <ellipse cx="50" cy="70" rx="8" ry="15" transform="rotate(0 50 70)"/>
+                <ellipse cx="50" cy="70" rx="8" ry="15" transform="rotate(30 50 70)"/>
+                <ellipse cx="50" cy="70" rx="8" ry="15" transform="rotate(-60 50 70)"/>
+                <ellipse cx="50" cy="70" rx="8" ry="15" transform="rotate(60 50 70)"/>
+                <circle cx="50" cy="70" r="5"/>
+            </svg>
+        </div>
+
+        <!-- Names Section -->
+        <div class="names-section section">
+            <div class="bride-groom-container">
+                <div class="name-card">
+                    <img src="https://images.unsplash.com/photo-1595467959776-8acfb0dc313f?w=800&h=600&fit=crop&q=80" alt="Bride" class="wedding-image">
+                    <div class="name">Anchali</div>
+                    <div class="parents-info">
+                        <div class="parents-label">Daughter of</div>
+                        G. D/o. Late Manden Bhaskaran<br>
+                        & Late Challi Lakshmi<br><br>
+                        and<br><br>
+                        Late Hon. Capt. (Retd.) K. N. Lakshmanan<br>
+                        & Late Prasanna Kumari
+                    </div>
+                </div>
+
+                <div class="divider">&</div>
+
+                <div class="name-card">
+                    <img src="https://images.unsplash.com/photo-1445117627052-274425469152?w=800&h=600&fit=crop&q=80" alt="Groom" class="wedding-image">
+                    <div class="name">Amith</div>
+                    <div class="parents-info">
+                        <div class="parents-label">Son of</div>
+                        S/o. Late Pradeep A.<br>
+                        & Mrs. Sumalathi E.<br><br>
+                        'Shivadam', Makroi, Kannur
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event Details -->
+        <div class="event-details section">
+            <h2 class="event-title">Wedding Ceremony</h2>
+            <div class="section-divider"></div>
+            
+            <!-- Lotus Decoration -->
+            <svg class="lotus-decoration" viewBox="0 0 100 100" fill="currentColor" style="margin-top: 50px;">
+                <ellipse cx="50" cy="70" rx="8" ry="15" transform="rotate(-30 50 70)"/>
+                <ellipse cx="50" cy="70" rx="8" ry="15" transform="rotate(0 50 70)"/>
+                <ellipse cx="50" cy="70" rx="8" ry="15" transform="rotate(30 50 70)"/>
+                <ellipse cx="50" cy="70" rx="8" ry="15" transform="rotate(-60 50 70)"/>
+                <ellipse cx="50" cy="70" rx="8" ry="15" transform="rotate(60 50 70)"/>
+                <circle cx="50" cy="70" r="5"/>
+            </svg>
+            
+            <div class="event-info">
+                <div class="date-time">
+                    Sunday, 1<sup>st</sup> February 2026<br>
+                    <span style="font-size: 1.1rem; color: #777; font-family: 'Raleway', sans-serif;">(1201 Makaram 18)</span>
+                </div>
+                <div style="font-size: 1.7rem; margin: 40px 0; color: var(--gold); font-weight: 600; font-family: 'Italiana', serif;">
+                    Muhurtham between 11:30 a.m. & 12:00 p.m.
+                </div>
+                <div class="venue">
+                    <strong style="color: var(--maroon); font-family: 'Cinzel', serif;">Venue:</strong><br>
+                    Dhanalakshmi Convention Centre<br>
+                    (Formerly Sadhoo Kalyana Mandapam)<br>
+                    Thana, Kannur
+                </div>
+                <a href="https://www.google.com/maps/place/Sadhoo+Kalyana+Mandapam/@11.8751449,75.3796196,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba43d29557b8153:0x9ab0c6fad00b1153!8m2!3d11.8751449!4d75.3821945!16s%2Fg%2F1tjhw2k9" target="_blank" class="map-button">
+                    📍 VIEW ON GOOGLE MAPS
+                </a>
+            </div>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-section section">
+            <h2 class="countdown-title">COUNTING DOWN TO THE BIG DAY</h2>
+            <div class="section-divider"></div>
+            <div class="countdown-timer" style="margin-top: 60px;">
+                <div class="time-unit">
+                    <span class="time-value" id="days">00</span>
+                    <span class="time-label">Days</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="hours">00</span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="minutes">00</span>
+                    <span class="time-label">Minutes</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-value" id="seconds">00</span>
+                    <span class="time-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RSVP Section -->
+        <div class="rsvp-section section">
+            <h2 class="rsvp-title">RSVP</h2>
+            <div class="section-divider"></div>
+            <form class="rsvp-form" id="rsvpForm" onsubmit="handleRSVP(event)" style="margin-top: 70px;">
+                <div class="form-group">
+                    <label for="guestName">Your Name *</label>
+                    <input type="text" id="guestName" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label>Will you be attending? *</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="attendingYes" name="attending" value="yes" required onchange="toggleAttendanceFields(true)">
+                            <label for="attendingYes" style="margin: 0; cursor: pointer; color: #333; font-weight: normal;">Joyfully Accept</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="attendingNo" name="attending" value="no" required onchange="toggleAttendanceFields(false)">
+                            <label for="attendingNo" style="margin: 0; cursor: pointer; color: #333; font-weight: normal;">Regretfully Decline</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="attendingFields" class="hidden">
+                    <div class="form-group">
+                        <label for="numberOfGuests">Number of Guests *</label>
+                        <input type="number" id="numberOfGuests" min="1" max="10" value="1" placeholder="How many people will attend?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dietaryPreference">Dietary Preference *</label>
+                        <select id="dietaryPreference">
+                            <option value="">Select preference</option>
+                            <option value="veg">Vegetarian</option>
+                            <option value="non-veg">Non-Vegetarian</option>
+                            <option value="both">Both</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="allergies">Allergies or Special Requests</label>
+                        <textarea id="allergies" placeholder="Please mention any allergies or special dietary requirements"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Additional Notes (Optional)</label>
+                    <textarea id="notes" placeholder="Share your wishes or any message for the couple"></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">SUBMIT RESPONSE</button>
+
+                <div id="successMessage" class="hidden"></div>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer section">
+            <!-- Lotus Decoration -->
+            <svg class="lotus-decoration" viewBox="0 0 100 100" fill="currentColor">
+                <ellipse cx="50" cy="70" rx="8" ry="15" transform="rotate(-30 50 70)"/>
+                <ellipse cx="50" cy="70" rx="8" ry="15" transform="rotate(0 50 70)"/>
+                <ellipse cx="50" cy="70" rx="8" ry="15" transform="rotate(30 50 70)"/>
+                <ellipse cx="50" cy="70" rx="8" ry="15" transform="rotate(-60 50 70)"/>
+                <ellipse cx="50" cy="70" rx="8" ry="15" transform="rotate(60 50 70)"/>
+                <circle cx="50" cy="70" r="5"/>
+            </svg>
+            
+            <p class="footer-text">
+                Sincere regards and warm wishes from<br>
+                Family & Friends
+            </p>
+            <p class="blessing">
+                Kindly bless the couple with your presence
+            </p>
+            
+            <div class="om-symbol" style="margin-top: 40px;">ॐ</div>
+        </div>
+    </div>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const weddingDate = new Date('2026-02-01T11:30:00');
+            const now = new Date();
+            const difference = weddingDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            } else {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Music Control
+        const audio = document.getElementById('backgroundMusic');
+        const musicControl = document.getElementById('musicControl');
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                audio.pause();
+                musicControl.textContent = '🔇';
+                isPlaying = false;
+            } else {
+                audio.play().catch(err => console.log('Audio play failed:', err));
+                musicControl.textContent = '🎵';
+                isPlaying = true;
+            }
+        }
+
+        // Auto-play music on user interaction
+        document.body.addEventListener('click', function() {
+            if (!isPlaying && audio.paused) {
+                audio.play().catch(err => console.log('Audio autoplay failed:', err));
+                musicControl.textContent = '🎵';
+                isPlaying = true;
+            }
+        }, { once: true });
+
+        // RSVP Form Handling
+        function toggleAttendanceFields(attending) {
+            const attendingFields = document.getElementById('attendingFields');
+            const numberOfGuests = document.getElementById('numberOfGuests');
+            const dietaryPreference = document.getElementById('dietaryPreference');
+            
+            if (attending) {
+                attendingFields.classList.remove('hidden');
+                numberOfGuests.required = true;
+                dietaryPreference.required = true;
+            } else {
+                attendingFields.classList.add('hidden');
+                numberOfGuests.required = false;
+                dietaryPreference.required = false;
+            }
+        }
+
+        function handleRSVP(event) {
+            event.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('guestName').value,
+                attending: document.querySelector('input[name="attending"]:checked').value,
+                numberOfGuests: document.getElementById('numberOfGuests').value || 'N/A',
+                dietaryPreference: document.getElementById('dietaryPreference').value || 'N/A',
+                allergies: document.getElementById('allergies').value || 'None',
+                notes: document.getElementById('notes').value || 'None'
+            };
+
+            // Format WhatsApp message
+            let message = `*Wedding RSVP - Anchali & Amith*\n\n`;
+            message += `*Name:* ${formData.name}\n`;
+            message += `*Attending:* ${formData.attending === 'yes' ? 'Yes ✓' : 'No ✗'}\n`;
+            
+            if (formData.attending === 'yes') {
+                message += `*Number of Guests:* ${formData.numberOfGuests}\n`;
+                message += `*Dietary Preference:* ${formData.dietaryPreference}\n`;
+                message += `*Allergies/Special Requests:* ${formData.allergies}\n`;
+            }
+            
+            message += `*Additional Notes:* ${formData.notes}`;
+
+            // Encode message for WhatsApp
+            const whatsappNumber = '919562553181';
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+            // Display success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.className = 'success-message';
+            
+            if (formData.attending === 'yes') {
+                successMessage.innerHTML = `
+                    <strong>Thank you, ${formData.name}!</strong><br>
+                    We're delighted that you'll be joining us for this special celebration!<br>
+                    Click below to send your RSVP via WhatsApp.
+                `;
+            } else {
+                successMessage.innerHTML = `
+                    <strong>Thank you, ${formData.name}!</strong><br>
+                    We understand and appreciate you taking the time to respond.<br>
+                    Click below to send your response via WhatsApp.
+                `;
+            }
+
+            // Open WhatsApp after a short delay
+            setTimeout(() => {
+                window.open(whatsappURL, '_blank');
+            }, 150);
+
+            // Reset form after 5 seconds
+            setTimeout(() => {
+                document.getElementById('rsvpForm').reset();
+                successMessage.className = 'hidden';
+                document.getElementById('attendingFields').classList.add('hidden');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
