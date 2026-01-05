@@ -86,9 +86,13 @@
 
         /* Section Separators */
         .section {
-            padding: 100px 20px;
+            padding: 80px 20px;
             position: relative;
             z-index: 2;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .section-divider {
@@ -385,6 +389,10 @@
             text-align: center;
             padding: 80px 20px;
             animation: fadeInDown 1s ease-out;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         @keyframes fadeInDown {
@@ -503,15 +511,6 @@
             line-height: 2;
             margin-top: 30px;
             font-family: 'Raleway', sans-serif;
-        }
-
-        .parents-label {
-            font-weight: 600;
-            color: var(--maroon);
-            margin-bottom: 15px;
-            font-size: 1.15rem;
-            font-family: 'Cinzel', serif;
-            letter-spacing: 1px;
         }
 
         .divider {
@@ -774,9 +773,13 @@
         /* Footer */
         .footer {
             text-align: center;
-            padding: 100px 20px;
+            padding: 80px 20px;
             border-top: 3px solid var(--gold);
             position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .footer::before {
@@ -810,7 +813,16 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .section {
-                padding: 60px 15px;
+                padding: 40px 15px;
+                min-height: 100vh;
+            }
+
+            .header {
+                padding: 40px 15px;
+            }
+
+            .footer {
+                padding: 40px 15px;
             }
 
             .paisley-corner {
@@ -869,7 +881,11 @@
             }
 
             .wedding-image {
-                height: 200px;
+                height: 180px;
+            }
+
+            .parents-info {
+                font-size: 0.95rem;
             }
         }
 
@@ -1006,12 +1022,10 @@
                     <img src="https://images.unsplash.com/photo-1595467959776-8acfb0dc313f?w=800&h=600&fit=crop&q=80" alt="Bride" class="wedding-image">
                     <div class="name">Anchali</div>
                     <div class="parents-info">
-                        <div class="parents-label">Daughter of</div>
-                        G. D/o. Late Manden Bhaskaran<br>
-                        & Late Challi Lakshmi<br><br>
-                        and<br><br>
-                        Late Hon. Capt. (Retd.) K. N. Lakshmanan<br>
-                        & Late Prasanna Kumari
+                        <div class="parents-label">Address:</div>
+                        'Piyusham', Near Rashtra Deepika Press,<br>
+                        Pallikunnu, Kannur<br>
+                        Ph: 8589970949
                     </div>
                 </div>
 
@@ -1021,9 +1035,9 @@
                     <img src="https://images.unsplash.com/photo-1445117627052-274425469152?w=800&h=600&fit=crop&q=80" alt="Groom" class="wedding-image">
                     <div class="name">Amith</div>
                     <div class="parents-info">
-                        <div class="parents-label">Son of</div>
                         S/o. Late Pradeep A.<br>
                         & Mrs. Sumalathi E.<br><br>
+                        <div class="parents-label" style="margin-top: 25px;">Address:</div>
                         'Shivadam', Makroi, Kannur
                     </div>
                 </div>
