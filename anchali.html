@@ -725,7 +725,7 @@
     </div>
 
     <!-- Audio Element -->
-    <audio id="backgroundMusic" loop>
+    <audio id="backgroundMusic" loop autoplay>
         <source src="https://cs1.mp3.pm/download/235465697/aTNGOUg3RDhSZXNqY2xXVmF3M0NpdGM4ZTF2RnRrSWN5V3NwM3V3akhZSElUdnJ5QUFjWnZKUVR0SDlTalNCd1FGeVhBRnh3b2xxbHhaUDBwWkdVZHhOVlNUWEtDQ09kNDNJV0FWNFJqM2pPamNlV2kxZG1GSkVMd1lrenVaRGM/Pritam_Sachet_Tandon_Amitabh_Bhattacharya_-_Kudmayi_From_Rocky_Aur_Rani_Kii_Prem_Kahaani_(mp3.pm).mp3" type="audio/mpeg">
     </audio>
 
@@ -978,14 +978,24 @@
             }
         }
 
-        // Auto-play music on user interaction
-        document.body.addEventListener('click', function() {
-            if (!isPlaying && audio.paused) {
-                audio.play().catch(err => console.log('Audio autoplay failed:', err));
+        // Attempt to autoplay music immediately on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            audio.play().then(() => {
                 musicControl.textContent = '🎵';
                 isPlaying = true;
-            }
-        }, { once: true });
+            }).catch(err => {
+                console.log('Autoplay blocked, waiting for user interaction:', err);
+                // Fallback: play on first user interaction
+                document.body.addEventListener('click', function() {
+                    if (!isPlaying && audio.paused) {
+                        audio.play().then(() => {
+                            musicControl.textContent = '🎵';
+                            isPlaying = true;
+                        }).catch(err => console.log('Audio play failed:', err));
+                    }
+                }, { once: true });
+            });
+        });
 
         // RSVP Form Handling
         function toggleAttendanceFields(attending) {
@@ -1057,12 +1067,12 @@
                 window.open(whatsappURL, '_blank');
             }, 150);
 
-            // Reset form after 5 seconds
+            // Reset form after 3 seconds
             setTimeout(() => {
                 document.getElementById('rsvpForm').reset();
                 successMessage.className = 'hidden';
                 document.getElementById('attendingFields').classList.add('hidden');
-            }, 5000);
+            }, 3000);
         }
     </script>
 </body>
