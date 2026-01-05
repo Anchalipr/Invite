@@ -144,6 +144,208 @@
             margin: 20px 0;
         }
 
+        /* Splash Screen Overlay */
+        .splash-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .splash-overlay.hidden {
+            animation: fadeOut 1s ease-out forwards;
+            pointer-events: none;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .splash-card {
+            background: var(--white);
+            border: 4px solid var(--gold);
+            padding: 60px 50px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            position: relative;
+            animation: scaleIn 0.8s ease-out;
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .splash-card::before {
+            content: '❋';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold);
+            font-size: 32px;
+            background: var(--white);
+            padding: 0 15px;
+        }
+
+        .splash-card::after {
+            content: '❋';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold);
+            font-size: 32px;
+            background: var(--white);
+            padding: 0 15px;
+        }
+
+        .splash-ganesh {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 30px;
+            color: var(--gold);
+            filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.5));
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .splash-om {
+            font-family: 'Lora', serif;
+            font-size: 3rem;
+            color: var(--gold);
+            margin: 25px 0;
+            opacity: 0.6;
+        }
+
+        .splash-hosts {
+            font-size: 1.1rem;
+            color: var(--maroon);
+            margin: 25px 0;
+            line-height: 1.9;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .splash-invitation {
+            font-size: 1.45rem;
+            font-style: italic;
+            color: #444;
+            margin: 30px 0;
+            line-height: 1.9;
+            font-family: 'Lora', serif;
+        }
+
+        .splash-divider {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 30px auto;
+        }
+
+        .enter-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 20px 60px;
+            background: var(--gold);
+            color: var(--white);
+            border: 3px solid var(--gold);
+            border-radius: 0;
+            font-weight: 600;
+            font-size: 1.3rem;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 4px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+        }
+
+        .enter-button:hover {
+            background: var(--white);
+            color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Hide main content initially */
+        .main-content {
+            opacity: 0;
+            animation: fadeInContent 1s ease-out 0.5s forwards;
+        }
+
+        @keyframes fadeInContent {
+            to {
+                opacity: 1;
+            }
+        }
+
+        body.splash-active .main-content {
+            display: none;
+        }
+
+        body.splash-active .music-control {
+            display: none;
+        }
+
+        body.splash-active .paisley-corner {
+            display: none;
+        }
+
+        /* Responsive splash screen */
+        @media (max-width: 768px) {
+            .splash-card {
+                padding: 40px 30px;
+            }
+
+            .splash-ganesh {
+                width: 80px;
+                height: 80px;
+            }
+
+            .splash-om {
+                font-size: 2.2rem;
+            }
+
+            .splash-hosts {
+                font-size: 1rem;
+            }
+
+            .splash-invitation {
+                font-size: 1.2rem;
+            }
+
+            .enter-button {
+                padding: 18px 45px;
+                font-size: 1.1rem;
+                letter-spacing: 3px;
+            }
+        }
+
         /* Music Control Button */
         .music-control {
             position: fixed;
@@ -698,7 +900,42 @@
         }
     </style>
 </head>
-<body>
+<body class="splash-active">
+    <!-- Splash Screen Overlay -->
+    <div class="splash-overlay" id="splashOverlay">
+        <div class="splash-card">
+            <!-- Ganesh Icon -->
+            <svg class="splash-ganesh" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M50,10 Q30,20 30,35 Q30,45 40,50 Q35,55 35,65 Q35,75 45,80 L45,90 L55,90 L55,80 Q65,75 65,65 Q65,55 60,50 Q70,45 70,35 Q70,20 50,10 Z M40,30 Q40,25 45,25 Q50,25 50,30 Q50,35 45,35 Q40,35 40,30 Z M55,25 Q60,25 60,30 Q60,35 55,35 Q50,35 50,30 Q50,25 55,25 Z"/>
+            </svg>
+
+            <!-- Om Symbol -->
+            <div class="splash-om">ॐ</div>
+
+            <!-- Hosts Info -->
+            <div class="splash-hosts">
+                <strong>Pradeep Kumar M. C. & Sajeena Pradeep</strong><br>
+                cordially invite you
+            </div>
+
+            <!-- Divider -->
+            <div class="splash-divider"></div>
+
+            <!-- Invitation Text -->
+            <p class="splash-invitation">
+                Join us in celebrating the wedding of<br>
+                <strong style="color: var(--gold); font-size: 1.6rem; font-family: 'Tangerine', cursive;">Anchali & Amith</strong>
+            </p>
+
+            <!-- Enter Button -->
+            <button class="enter-button" onclick="enterInvitation()">
+                Open Invitation
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content (Hidden Initially) -->
+    <div class="main-content">
     <!-- Paisley Decorative Corners -->
     <svg class="paisley-corner paisley-top-left" viewBox="0 0 100 100" fill="currentColor">
         <path d="M50,10 Q70,20 70,40 Q70,60 50,70 Q30,60 30,40 Q30,20 50,10 Z M50,30 Q60,35 60,45 Q60,55 50,60 Q40,55 40,45 Q40,35 50,30 Z"/>
@@ -725,7 +962,7 @@
     </div>
 
     <!-- Audio Element -->
-    <audio id="backgroundMusic" loop autoplay>
+    <audio id="backgroundMusic" loop>
         <source src="https://cs1.mp3.pm/download/235465697/aTNGOUg3RDhSZXNqY2xXVmF3M0NpdGM4ZTF2RnRrSWN5V3NwM3V3akhZSElUdnJ5QUFjWnZKUVR0SDlTalNCd1FGeVhBRnh3b2xxbHhaUDBwWkdVZHhOVlNUWEtDQ09kNDNJV0FWNFJqM2pPamNlV2kxZG1GSkVMd1lrenVaRGM/Pritam_Sachet_Tandon_Amitabh_Bhattacharya_-_Kudmayi_From_Rocky_Aur_Rani_Kii_Prem_Kahaani_(mp3.pm).mp3" type="audio/mpeg">
     </audio>
 
@@ -932,8 +1169,30 @@
             <div class="om-symbol" style="margin-top: 40px;">ॐ</div>
         </div>
     </div>
+    </div><!-- End of main-content -->
 
     <script>
+        // Splash Screen Entry Function
+        function enterInvitation() {
+            const splashOverlay = document.getElementById('splashOverlay');
+            const audio = document.getElementById('backgroundMusic');
+            const musicControl = document.getElementById('musicControl');
+            
+            // Hide splash screen
+            splashOverlay.classList.add('hidden');
+            document.body.classList.remove('splash-active');
+            
+            // Start playing music
+            setTimeout(() => {
+                audio.play().then(() => {
+                    musicControl.textContent = '🎵';
+                    isPlaying = true;
+                }).catch(err => {
+                    console.log('Audio play failed:', err);
+                });
+            }, 500);
+        }
+
         // Countdown Timer
         function updateCountdown() {
             const weddingDate = new Date('2026-02-01T11:30:00');
@@ -977,25 +1236,6 @@
                 isPlaying = true;
             }
         }
-
-        // Attempt to autoplay music immediately on page load
-        window.addEventListener('DOMContentLoaded', function() {
-            audio.play().then(() => {
-                musicControl.textContent = '🎵';
-                isPlaying = true;
-            }).catch(err => {
-                console.log('Autoplay blocked, waiting for user interaction:', err);
-                // Fallback: play on first user interaction
-                document.body.addEventListener('click', function() {
-                    if (!isPlaying && audio.paused) {
-                        audio.play().then(() => {
-                            musicControl.textContent = '🎵';
-                            isPlaying = true;
-                        }).catch(err => console.log('Audio play failed:', err));
-                    }
-                }, { once: true });
-            });
-        });
 
         // RSVP Form Handling
         function toggleAttendanceFields(attending) {
