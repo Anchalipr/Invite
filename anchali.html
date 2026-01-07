@@ -222,24 +222,6 @@
             padding: 0 15px;
         }
 
-        .splash-ganesh {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 30px;
-            color: var(--gold);
-            filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.5));
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
         .splash-om {
             font-family: 'Lora', serif;
             font-size: 3rem;
@@ -326,11 +308,6 @@
                 padding: 40px 30px;
             }
 
-            .splash-ganesh {
-                width: 80px;
-                height: 80px;
-            }
-
             .splash-om {
                 font-size: 2.2rem;
             }
@@ -404,15 +381,6 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-
-        .ganesh-icon {
-            width: 90px;
-            height: 90px;
-            margin: 0 auto 40px;
-            color: var(--gold);
-            filter: drop-shadow(0 3px 10px rgba(212, 175, 55, 0.4));
-            animation: fadeIn 1.5s ease-out 0.3s both;
         }
 
         @keyframes fadeIn {
@@ -491,6 +459,7 @@
             width: 100%;
             height: 280px;
             object-fit: cover;
+            object-position: center;
             margin-bottom: 40px;
             border: 3px solid var(--gold);
         }
@@ -920,11 +889,6 @@
     <!-- Splash Screen Overlay -->
     <div class="splash-overlay" id="splashOverlay">
         <div class="splash-card">
-            <!-- Ganesh Icon -->
-            <svg class="splash-ganesh" viewBox="0 0 100 100" fill="currentColor">
-                <path d="M50,10 Q30,20 30,35 Q30,45 40,50 Q35,55 35,65 Q35,75 45,80 L45,90 L55,90 L55,80 Q65,75 65,65 Q65,55 60,50 Q70,45 70,35 Q70,20 50,10 Z M40,30 Q40,25 45,25 Q50,25 50,30 Q50,35 45,35 Q40,35 40,30 Z M55,25 Q60,25 60,30 Q60,35 55,35 Q50,35 50,30 Q50,25 55,25 Z"/>
-            </svg>
-
             <!-- Om Symbol -->
             <div class="splash-om">ॐ</div>
 
@@ -940,7 +904,7 @@
             <!-- Invitation Text -->
             <p class="splash-invitation">
                 Join us in celebrating the wedding of<br>
-                <strong style="color: var(--gold); font-size: 1.6rem; font-family: 'Tangerine', cursive;">Anchali & Amith</strong>
+                <strong style="color: var(--gold); font-size: 2.5rem; font-family: 'Tangerine', cursive; display: block; margin-top: 15px;">Anchali & Amith</strong>
             </p>
 
             <!-- Enter Button -->
@@ -979,16 +943,12 @@
 
     <!-- Audio Element -->
     <audio id="backgroundMusic" loop>
-        <source src="https://cs1.mp3.pm/download/235465697/aTNGOUg3RDhSZXNqY2xXVmF3M0NpdGM4ZTF2RnRrSWN5V3NwM3V3akhZSElUdnJ5QUFjWnZKUVR0SDlTalNCd1FGeVhBRnh3b2xxbHhaUDBwWkdVZHhOVlNUWEtDQ09kNDNJV0FWNFJqM2pPamNlV2kxZG1GSkVMd1lrenVaRGM/Pritam_Sachet_Tandon_Amitabh_Bhattacharya_-_Kudmayi_From_Rocky_Aur_Rani_Kii_Prem_Kahaani_(mp3.pm).mp3" type="audio/mpeg">
+        <source src="song.mpeg" type="audio/mpeg">
     </audio>
 
     <div class="container">
         <!-- Header Section -->
         <div class="header section">
-            <svg class="ganesh-icon" viewBox="0 0 100 100" fill="currentColor">
-                <path d="M50,10 Q30,20 30,35 Q30,45 40,50 Q35,55 35,65 Q35,75 45,80 L45,90 L55,90 L55,80 Q65,75 65,65 Q65,55 60,50 Q70,45 70,35 Q70,20 50,10 Z M40,30 Q40,25 45,25 Q50,25 50,30 Q50,35 45,35 Q40,35 40,30 Z M55,25 Q60,25 60,30 Q60,35 55,35 Q50,35 50,30 Q50,25 55,25 Z"/>
-            </svg>
-            
             <div class="om-symbol">ॐ</div>
             
             <div class="hosts-info">
@@ -1019,7 +979,7 @@
         <div class="names-section section">
             <div class="bride-groom-container">
                 <div class="name-card">
-                    <img src="https://images.unsplash.com/photo-1595467959776-8acfb0dc313f?w=800&h=600&fit=crop&q=80" alt="Bride" class="wedding-image">
+                    <img src="anchali.jpeg" alt="Bride" class="wedding-image">
                     <div class="name">Anchali</div>
                     <div class="parents-info">
                         <div class="parents-label">Address:</div>
@@ -1032,13 +992,13 @@
                 <div class="divider">&</div>
 
                 <div class="name-card">
-                    <img src="https://images.unsplash.com/photo-1445117627052-274425469152?w=800&h=600&fit=crop&q=80" alt="Groom" class="wedding-image">
+                    <img src="amith.jpeg" alt="Groom" class="wedding-image">
                     <div class="name">Amith</div>
                     <div class="parents-info">
                         S/o. Late Pradeep A.<br>
                         & Mrs. Sumalathi E.<br><br>
                         <div class="parents-label" style="margin-top: 25px;">Address:</div>
-                        'Shivadam', Makroi, Kannur
+                        'Shivadam', Makreri, Kannur
                     </div>
                 </div>
             </div>
@@ -1118,11 +1078,11 @@
                     <div class="radio-group">
                         <div class="radio-option">
                             <input type="radio" id="attendingYes" name="attending" value="yes" required onchange="toggleAttendanceFields(true)">
-                            <label for="attendingYes" style="margin: 0; cursor: pointer; color: #333; font-weight: normal;">Joyfully Accept</label>
+                            <label for="attendingYes" style="margin: 0; cursor: pointer; color: #333; font-weight: normal;">Yes</label>
                         </div>
                         <div class="radio-option">
                             <input type="radio" id="attendingNo" name="attending" value="no" required onchange="toggleAttendanceFields(false)">
-                            <label for="attendingNo" style="margin: 0; cursor: pointer; color: #333; font-weight: normal;">Regretfully Decline</label>
+                            <label for="attendingNo" style="margin: 0; cursor: pointer; color: #333; font-weight: normal;">No</label>
                         </div>
                     </div>
                 </div>
@@ -1131,21 +1091,6 @@
                     <div class="form-group">
                         <label for="numberOfGuests">Number of Guests *</label>
                         <input type="number" id="numberOfGuests" min="1" max="10" value="1" placeholder="How many people will attend?">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="dietaryPreference">Dietary Preference *</label>
-                        <select id="dietaryPreference">
-                            <option value="">Select preference</option>
-                            <option value="veg">Vegetarian</option>
-                            <option value="non-veg">Non-Vegetarian</option>
-                            <option value="both">Both</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="allergies">Allergies or Special Requests</label>
-                        <textarea id="allergies" placeholder="Please mention any allergies or special dietary requirements"></textarea>
                     </div>
                 </div>
 
@@ -1255,16 +1200,13 @@
         function toggleAttendanceFields(attending) {
             const attendingFields = document.getElementById('attendingFields');
             const numberOfGuests = document.getElementById('numberOfGuests');
-            const dietaryPreference = document.getElementById('dietaryPreference');
             
             if (attending) {
                 attendingFields.classList.remove('hidden');
                 numberOfGuests.required = true;
-                dietaryPreference.required = true;
             } else {
                 attendingFields.classList.add('hidden');
                 numberOfGuests.required = false;
-                dietaryPreference.required = false;
             }
         }
 
@@ -1275,8 +1217,6 @@
                 name: document.getElementById('guestName').value,
                 attending: document.querySelector('input[name="attending"]:checked').value,
                 numberOfGuests: document.getElementById('numberOfGuests').value || 'N/A',
-                dietaryPreference: document.getElementById('dietaryPreference').value || 'N/A',
-                allergies: document.getElementById('allergies').value || 'None',
                 notes: document.getElementById('notes').value || 'None'
             };
 
@@ -1287,8 +1227,6 @@
             
             if (formData.attending === 'yes') {
                 message += `*Number of Guests:* ${formData.numberOfGuests}\n`;
-                message += `*Dietary Preference:* ${formData.dietaryPreference}\n`;
-                message += `*Allergies/Special Requests:* ${formData.allergies}\n`;
             }
             
             message += `*Additional Notes:* ${formData.notes}`;
