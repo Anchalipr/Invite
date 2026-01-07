@@ -618,127 +618,6 @@
             font-family: 'Raleway', sans-serif;
         }
 
-        /* RSVP Section */
-        .rsvp-section {
-            padding: 100px 20px;
-            animation: fadeIn 2s ease-out 2s both;
-        }
-
-        .rsvp-title {
-            font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            color: var(--gold);
-            text-align: center;
-            margin-bottom: 70px;
-            letter-spacing: 8px;
-            font-weight: 600;
-        }
-
-        .rsvp-form {
-            max-width: 700px;
-            margin: 0 auto;
-            background: var(--white);
-            border: 3px solid var(--gold);
-            border-radius: 0;
-            padding: 70px 60px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            position: relative;
-        }
-
-        .rsvp-form::before {
-            content: '❋';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--gold);
-            font-size: 24px;
-            background: var(--white);
-            padding: 0 15px;
-        }
-
-        .form-group {
-            margin-bottom: 35px;
-        }
-
-        label {
-            display: block;
-            font-size: 1.1rem;
-            color: var(--maroon);
-            margin-bottom: 12px;
-            font-weight: 600;
-            font-family: 'Raleway', sans-serif;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 16px;
-            background: var(--off-white);
-            border: 2px solid #ddd;
-            border-radius: 0;
-            color: #333;
-            font-family: 'Lora', serif;
-            font-size: 1.05rem;
-            transition: all 0.3s ease;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--gold);
-            background: var(--white);
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .radio-group {
-            display: flex;
-            gap: 40px;
-            margin-top: 15px;
-        }
-
-        .radio-option {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            cursor: pointer;
-        }
-
-        input[type="radio"] {
-            width: auto;
-            cursor: pointer;
-            accent-color: var(--gold);
-        }
-
-        .submit-button {
-            width: 100%;
-            padding: 22px;
-            background: var(--gold);
-            color: var(--white);
-            border: 3px solid var(--gold);
-            border-radius: 0;
-            font-size: 1.3rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Cinzel', serif;
-            letter-spacing: 4px;
-            margin-top: 20px;
-        }
-
-        .submit-button:hover {
-            background: var(--white);
-            color: var(--gold);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        .hidden {
-            display: none;
-        }
-
         /* Footer */
         .footer {
             text-align: center;
@@ -799,7 +678,7 @@
                 height: 80px;
             }
 
-            .event-title, .rsvp-title {
+            .event-title {
                 font-size: 2.2rem;
                 letter-spacing: 4px;
             }
@@ -840,47 +719,12 @@
                 font-size: 2.8rem;
             }
 
-            .rsvp-form {
-                padding: 40px 25px;
-            }
-
-            .radio-group {
-                flex-direction: column;
-                gap: 20px;
-            }
-
             .wedding-image {
                 height: 180px;
             }
 
             .parents-info {
                 font-size: 0.95rem;
-            }
-        }
-
-        /* Success Message */
-        .success-message {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
-            border: 3px solid var(--gold);
-            border-radius: 0;
-            padding: 35px;
-            text-align: center;
-            color: var(--maroon);
-            font-size: 1.2rem;
-            margin-top: 30px;
-            animation: slideInUp 0.5s ease-out;
-            line-height: 1.9;
-            font-family: 'Lora', serif;
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
             }
         }
     </style>
@@ -1063,48 +907,6 @@
             </div>
         </div>
 
-        <!-- RSVP Section -->
-        <div class="rsvp-section section">
-            <h2 class="rsvp-title">RSVP</h2>
-            <div class="section-divider"></div>
-            <form class="rsvp-form" id="rsvpForm" onsubmit="handleRSVP(event)" style="margin-top: 70px;">
-                <div class="form-group">
-                    <label for="guestName">Your Name *</label>
-                    <input type="text" id="guestName" required placeholder="Enter your full name">
-                </div>
-
-                <div class="form-group">
-                    <label>Will you be attending? *</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="attendingYes" name="attending" value="yes" required onchange="toggleAttendanceFields(true)">
-                            <label for="attendingYes" style="margin: 0; cursor: pointer; color: #333; font-weight: normal;">Yes</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="attendingNo" name="attending" value="no" required onchange="toggleAttendanceFields(false)">
-                            <label for="attendingNo" style="margin: 0; cursor: pointer; color: #333; font-weight: normal;">No</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="attendingFields" class="hidden">
-                    <div class="form-group">
-                        <label for="numberOfGuests">Number of Guests *</label>
-                        <input type="number" id="numberOfGuests" min="1" max="10" value="1" placeholder="How many people will attend?">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="notes">Additional Notes (Optional)</label>
-                    <textarea id="notes" placeholder="Share your wishes or any message for the couple"></textarea>
-                </div>
-
-                <button type="submit" class="submit-button">SUBMIT RESPONSE</button>
-
-                <div id="successMessage" class="hidden"></div>
-            </form>
-        </div>
-
         <!-- Footer -->
         <div class="footer section">
             <!-- Lotus Decoration -->
@@ -1196,76 +998,6 @@
             }
         }
 
-        // RSVP Form Handling
-        function toggleAttendanceFields(attending) {
-            const attendingFields = document.getElementById('attendingFields');
-            const numberOfGuests = document.getElementById('numberOfGuests');
-            
-            if (attending) {
-                attendingFields.classList.remove('hidden');
-                numberOfGuests.required = true;
-            } else {
-                attendingFields.classList.add('hidden');
-                numberOfGuests.required = false;
-            }
-        }
-
-        function handleRSVP(event) {
-            event.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('guestName').value,
-                attending: document.querySelector('input[name="attending"]:checked').value,
-                numberOfGuests: document.getElementById('numberOfGuests').value || 'N/A',
-                notes: document.getElementById('notes').value || 'None'
-            };
-
-            // Format WhatsApp message
-            let message = `*Wedding RSVP - Anchali & Amith*\n\n`;
-            message += `*Name:* ${formData.name}\n`;
-            message += `*Attending:* ${formData.attending === 'yes' ? 'Yes ✓' : 'No ✗'}\n`;
-            
-            if (formData.attending === 'yes') {
-                message += `*Number of Guests:* ${formData.numberOfGuests}\n`;
-            }
-            
-            message += `*Additional Notes:* ${formData.notes}`;
-
-            // Encode message for WhatsApp
-            const whatsappNumber = '919562553181';
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
-            // Display success message
-            const successMessage = document.getElementById('successMessage');
-            successMessage.className = 'success-message';
-            
-            if (formData.attending === 'yes') {
-                successMessage.innerHTML = `
-                    <strong>Thank you, ${formData.name}!</strong><br>
-                    We're delighted that you'll be joining us for this special celebration!<br>
-                    Click below to send your RSVP via WhatsApp.
-                `;
-            } else {
-                successMessage.innerHTML = `
-                    <strong>Thank you, ${formData.name}!</strong><br>
-                    We understand and appreciate you taking the time to respond.<br>
-                    Click below to send your response via WhatsApp.
-                `;
-            }
-
-            // Open WhatsApp after a short delay
-            setTimeout(() => {
-                window.open(whatsappURL, '_blank');
-            }, 150);
-
-            // Reset form after 3 seconds
-            setTimeout(() => {
-                document.getElementById('rsvpForm').reset();
-                successMessage.className = 'hidden';
-                document.getElementById('attendingFields').classList.add('hidden');
-            }, 3000);
-        }
     </script>
 </body>
 </html>
